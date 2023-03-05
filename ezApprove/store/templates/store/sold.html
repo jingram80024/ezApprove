@@ -1,0 +1,18 @@
+{% extends 'store/base.html' %}
+
+{% block content %}
+<h1>Sold Items</h1>
+<div class="products-sold">
+    {% if product_list %}
+    {% for product in product_list %}
+        <div class="card">
+            <h2>{{ product.name }}, sold at ${{ product.sold_price }}</h2>
+            <div class="img-container"><img src="{{ MEDIA_URL }}{{ product.image }}"/></div>
+            <input type="button" value="Approve" style="padding: 5px 5px;">
+            <p>{{ product.description }}</p>
+        </div>
+    {% endfor %}
+    {% else %}
+        <p>No products to display</p>
+    {% endif %}
+{% endblock %}

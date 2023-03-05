@@ -1,0 +1,19 @@
+{% extends 'store/base.html' %}
+
+{% block content %}
+<h1>Kicked Back</h1>
+<p>See comments for resolution</p>
+<div class="products-kicked-back">
+    {% if product_list %}
+    {% for product in product_list %}
+        <div class="card">
+            <h2>{{ product.name }}</h2>
+            <div class="img-container"><img src="{{ MEDIA_URL }}{{ product.image }}"/></div>
+            <input type="button" value="Resubmit" style="padding: 5px 5px;">
+            <p>{{ product.description }}</p>
+        </div>
+    {% endfor %}
+    {% else %}
+        <p>No products to display</p>
+    {% endif %}
+{% endblock %}

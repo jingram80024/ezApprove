@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>EZ Approve Lite&#174</title>
+        <meta name="description" content="ezApproveLite">
+        <meta name="author" content="Jonathan Ingram">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'store/style.css' %}">
+        <script src="{% static 'store/jquery-3.6.3.min.js' %}"></script>
+        <script src="{% static 'store/base.js' %}"></script>
+    </head>
+    <body>
+        <div class="topnav">
+            <a id="nav-pending" href="/store/">Pending Approval</a>
+            <a id="nav-sold" href="/store/sold">Sold</a>
+            <a id="nav-approved" href="/store/approved">Approved</a>
+            <a id="nav-kicked-back" href="/store/kicked-back">Kicked Back</a>
+            <a id="nav-denied" href="/store/denied">Denied</a>
+        </div>
+          
+        <div class="center">
+        {% block content %}
+        {% endblock %}
+        </div>
+    </body>
+</html>

@@ -1,0 +1,17 @@
+{% extends 'store/base.html' %}
+
+{% block content %}
+<h1>Denied Items</h1>
+<div class="products-denied">
+    {% if product_list %}
+    {% for product in product_list %}
+        <div class="card">
+            <h2>{{ product.name }}</h2>
+            <div class="img-container"><img src="{{ MEDIA_URL }}{{ product.image }}"/></div>
+            <p>{{ product.description }}</p>
+        </div>
+    {% endfor %}
+    {% else %}
+        <p>No products to display</p>
+    {% endif %}
+{% endblock %}

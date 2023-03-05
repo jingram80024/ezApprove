@@ -1,0 +1,18 @@
+{% extends 'store/base.html' %}
+
+{% block content %}
+<h1>Items Awaiting Approval</h1>
+<div class="products-pending-approval">
+    {% if product_list %}
+    {% for product in product_list %}
+        <div class="card">
+            <h2>{{ product.name }}, listing at ${{ product.list_price }}</h2>
+            <div class="img-container"><img src="{{ MEDIA_URL }}{{ product.image }}"/></div>
+            <input type="button" value="Approve" style="padding: 5px 5px;">
+            <p>{{ product.description }}</p>
+        </div>
+    {% endfor %}
+    {% else %}
+        <p>No products to display</p>
+    {% endif %}
+{% endblock %}
