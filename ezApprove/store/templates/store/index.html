@@ -5,10 +5,16 @@
 <div class="products-pending-approval">
     {% if product_list %}
     {% for product in product_list %}
-        <div class="card">
+        <div class="card" id="{{ product.name }}-card">
             <h2>{{ product.name }}, listing at ${{ product.list_price }}</h2>
             <div class="img-container"><img src="{{ MEDIA_URL }}{{ product.image }}"/></div>
-            <input type="button" value="Approve" style="padding: 5px 5px;">
+            <input type="button" id="{{ product.name }}-approve" value="Approve" style="padding: 5px 5px;" onclick="handleButtons(this.id);return false;">
+            <input type="button" id="{{ product.name }}-kickback" value="Kick Back" style="padding: 5px 5px;" onclick="handleButtons(this.id);return false;">
+            <input type="button" id="{{ product.name }}-deny" value="Deny" style="padding: 5px 5px;" onclick="handleButtons(this.id);return false;">
+            <h2>Approver Comments</h2>
+            <textarea id="{{ product.name }}-comments-field" name="textarea" style="width:600px;height:50px;"></textarea>
+            <br>
+            <h2>Item Description</h2>
             <p>{{ product.description }}</p>
         </div>
     {% endfor %}

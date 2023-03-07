@@ -4,13 +4,20 @@
 <h1>Kicked Back</h1>
 <p>See comments for resolution</p>
 <div class="products-kicked-back">
-    {% if product_list %}
-    {% for product in product_list %}
-        <div class="card">
+    {% if context_list %}
+    {% for product, taginfo in context_list %}
+        <div class="card" id="{{ product.name }}-card">
             <h2>{{ product.name }}</h2>
             <div class="img-container"><img src="{{ MEDIA_URL }}{{ product.image }}"/></div>
-            <input type="button" value="Resubmit" style="padding: 5px 5px;">
-            <p>{{ product.description }}</p>
+            <input type="button" id="{{ product.name }}-resubmit" value="Resubmit" style="padding: 5px 5px;" onclick="handleButtons(this.id);return false;">
+            <label for="list-price-field">Enter list price:</label>
+            <input id="{{ product.name }}-list-price-field" type="text" name="list-price-field" value="{{ product.list_price }}">
+            <br><br>
+            <h3>Approver Comments:</h3>
+            <p>"{{ taginfo.reason_added }}"</p>
+            <h3>Product Details</h3>
+            <textarea id="{{ product.name }}-description-field" name="textarea" style="width:600px;height:100px;">{{ product.description }}</textarea>
+            <br><br>
         </div>
     {% endfor %}
     {% else %}

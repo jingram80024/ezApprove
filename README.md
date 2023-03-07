@@ -17,3 +17,6 @@ A Simple Django project to support process of selling client's items. Client was
 ## Other
 - jQuery3.6.3
 
+Thanks to the Django team for the great documentation. https://docs.djangoproject.com/en/4.1/
+
+Thanks as well as Jaysha on OrdinaryCoders blog for the guides on authentication and login. Great how-to's and explanations: https://ordinarycoders.com/blog/Jaysha

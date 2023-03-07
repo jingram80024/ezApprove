@@ -23,7 +23,7 @@ body {
 }
   
 .topnav a.active {
-    background-color: #04AA6D;
+    background-color: #6031bd;
     color: white;
 }
 
@@ -43,4 +43,8 @@ div.card {
 }
 div.card img {
     max-width: 440px;/* just for development while img sizes are annoying. later make css more rounded out*/
+}
+
+button {
+    display: inline-block;
 }

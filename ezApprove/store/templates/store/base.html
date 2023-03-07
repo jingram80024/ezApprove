@@ -7,7 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         {% load static %}
         <link rel="stylesheet" href="{% static 'store/style.css' %}">
-        <script src="{% static 'store/jquery-3.6.3.min.js' %}"></script>
+        <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
         <script src="{% static 'store/base.js' %}"></script>
     </head>
     <body>
@@ -17,11 +17,27 @@
             <a id="nav-approved" href="/store/approved">Approved</a>
             <a id="nav-kicked-back" href="/store/kicked-back">Kicked Back</a>
             <a id="nav-denied" href="/store/denied">Denied</a>
+            <div class="git-link">
+                <a class="nav-item" href="https://github.com/jingram80024/ezApprove">GitHub Repo (off-site)</a>
+            </div>
+            <div class="navbar-nav mr-auto">
+                {% if user.is_authenticated %}
+                <div class="nav-item">
+                  <a class="nav-link" href="/store/logout">Logout</a>
+                </div>
+                <div class="nav-item">
+                  <a class="nav-link" href="#">Welcome, {{user.username}}</a>
+                </div>
+                {% else %}
+                <div class="nav-item">
+                    <a class="nav-link" href="/store/login">Login</a>
+                </div>
+                {% endif %}
+            </div>
         </div>
-          
+
         <div class="center">
         {% block content %}
         {% endblock %}
         </div>
-    </body>
 </html>

@@ -21,6 +21,7 @@ from django.conf.urls.static import static
 
 
 urlpatterns = [
+    #path('', include('store.urls')), # redirects all site traffic to store app. Can change if you implement multiple apps in your project
     path('admin/', admin.site.urls),
     path('store/',include('store.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
