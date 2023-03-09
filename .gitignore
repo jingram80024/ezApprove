@@ -6,6 +6,9 @@ uploads/
 
 #venv
 ezApprove-venv/
+ezApprove-env/
+env/
+venv/
 
 #vscode
 .vscode/
