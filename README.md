@@ -28,13 +28,19 @@ Thanks as well as Jaysha on OrdinaryCoders blog for the guides on authentication
 
 ## Setting Up the Environment on Linux
 
+Run `sudo apt update`
+
+Run `sudo apt upgrade`
+
 Ensure you have python3.10.6
 
-If you do not have python virtual environment run `sudo apt install python3-venv`
+If you do not have python virtual environment run `sudo apt install python3.10-venv`
 
 Create a virtual environment using `python3 -m venv <env_name>`
 
-Inside the virtual environment run the following to install required packages:
+Activate the virtual environment by running `source <env_name>/bin/activate`
+
+Now inside the virtual environment, run the following to install required packages:
 - `pip install django`
 - `pip install django-crispy-forms`
 - `pip install crispy-bootstrap4`
@@ -123,9 +129,9 @@ The terminal should say `guni:gunicorn                    RUNNING   pid 19537, u
 
 If the terminal says `STARTING`, `FATAL`, or `BACKOFF` your .conf file may be wrong.
 
-Run `cd ..` until you are in the `/etc` directory
+Run `cd`
 
-Run `cd nginx`
+Run `cd /etc/nginx`
 
 To modify NGINX configuration file run `sudo vim nginx.conf`
 
